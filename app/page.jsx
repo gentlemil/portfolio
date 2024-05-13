@@ -1,3 +1,5 @@
+import Footer from '@/components/Footer'
+
 const HomePage = () => {
   return (
     <>
@@ -8,6 +10,7 @@ const HomePage = () => {
         ullam nobis fugit? Repudiandae quis maiores quidem amet possimus iste
         ad.
       </p>
+      <Footer />
     </>
   )
 }

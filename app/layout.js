@@ -1,6 +1,8 @@
 import { Ubuntu } from 'next/font/google'
 
 import '@/assets/styles/globals.css'
+import Hero from '@/components/Hero'
+import Navbar from '@/components/Navbar'
 
 const ubuntu = Ubuntu({
   weight: ['300', '400', '500', '700'],
@@ -16,7 +18,9 @@ const MainLayout = ({ children }) => {
   return (
     <html lang='en'>
       <body className={ubuntu.className}>
-        <main>{children}</main>
+        <Hero />
+        <Navbar />
+        <main className='text-gray-200'>{children}</main>
       </body>
     </html>
   )
