@@ -1,0 +1,60 @@
+'use server'
+import connectDB from '@/config/database'
+import Project from '@/models/Project'
+import cloudinary from '@/config/cloudinary'
+import { revalidatePath } from 'next/cache'
+import { redirect } from 'next/navigation'
+
+async function addProject(formData) {
+  await connectDB()
+
+  // should check user session here
+  // const sessionUser = await getSessionUser()
+
+  // if (!sessionUser || !sessionUser.userId) {
+  //   throw new Error('You must be logged in to add a property')
+  // }
+
+  const images = formData.getAll('images').filter((image) => image.name !== '')
+
+  const propertyData = {
+    name: formData.get('name'),
+    description: formData.get('description'),
+    url: formData.get('url'),
+    github: formData.get('github'),
+    tech_stack: formData.getAll('tech_stack'),
+  }
+
+  const imageUrls = []
+
+  for (const imageFile of images) {
+    const imageBuffer = await imageFile.arrayBuffer()
+    const imageArray = Array.from(new Uint8Array(imageBuffer))
+    const imageData = Buffer.from(imageArray)
+
+    // convert the image data to base64
+    const imageBase64 = imageData.toString('base64')
+
+    // make request to upload to Cloudinary
+    const result = await cloudinary.uploader.upload(
+      `data:image/png;base64,${imageBase64}`,
+      {
+        folder: 'portfolio',
+      }
+    )
+
+    imageUrls.push(result.secure_url)
+  }
+
+  propertyData.images = imageUrls
+
+  const newProperty = new Project(propertyData)
+  await newProperty.save()
+
+  // revalidate the cache
+  revalidatePath('/', 'layout')
+
+  redirect(`/user/dashboard/projects`)
+}
+
+export default addProject

@@ -20,15 +20,11 @@ const Navbar = () => {
     setAuthProviders()
   }, [])
 
-  if (session) {
-    console.log(session)
-  }
-
   return (
     <nav className='border-b border-mint/20 pb-4'>
       <div className='md:ml-6 block'>
-        <div className='flex justify-between items-center gap-4 px-4 md:pl-16 overflow-scroll'>
-          <div className='flex justify-start items-center gap-2 md:gap-4'>
+        <div className='flex justify-between items-center gap-4 px-4 md:pl-16 '>
+          <div className='flex justify-start items-center gap-2 md:gap-4 overflow-scroll'>
             <Link
               href='/'
               className={`${
