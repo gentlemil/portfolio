@@ -12,8 +12,17 @@ const HomePage = () => {
       </h1>
 
       <h4 className='text-2xl font-normal tracking-wide'>
-        I'm a PL based full-stack web developer, bushcrafter, dogtrekking lover.
+        I am full-stack web developer based in Cracow, PL, backpacer,
+        bushcrafter.
       </h4>
+      <h4 className='text-2xl font-normal tracking-wide'>
+        Let's make something <span className='text-mint'>special</span>{' '}
+        together.
+      </h4>
+
+      <div className='w-full flex justify-center items-center pt-20'>
+        <button className='border text-xl'>Contact me!</button>
+      </div>
 
       <div className='pt-40'>
         <Footer />

@@ -3,12 +3,15 @@
 @tailwind utilities;
 
 body {
+  box-sizing: border-box;
   width: 100vw;
   min-height: 100vh;
+  height: 100%;
   margin: 0;
   padding: 0;
 
   background: #1eb78e;
   background: radial-gradient(at left bottom, #1eb78e, #010101);
   background-repeat: no-repeat;
+  background-attachment: fixed;
 }
