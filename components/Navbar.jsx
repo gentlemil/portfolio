@@ -40,6 +40,14 @@ const Navbar = () => {
           >
             experience
           </Link>
+          <Link
+            href='/contact'
+            className={`${
+              pathname === '/contact' ? 'border border-mint' : ''
+            } text-white hover:border hover:border-mint rounded-full px-4 py-2 whitespace-nowrap`}
+          >
+            contact
+          </Link>
         </div>
       </div>
     </nav>
