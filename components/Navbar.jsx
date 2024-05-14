@@ -11,40 +11,40 @@ const Navbar = () => {
           <Link
             href='/'
             className={`${
-              pathname === '/' ? 'border border-mint' : ''
-            } text-white hover:border hover:border-mint rounded-full px-4 py-2 whitespace-nowrap`}
+              pathname === '/' ? 'border-mint' : ''
+            } border border-transparent text-white hover:border hover:border-mint rounded-full px-4 py-2 whitespace-nowrap transition-all`}
           >
             Home
           </Link>
           <Link
             href='/about'
             className={`${
-              pathname === '/about' ? 'border border-mint' : ''
-            } text-white hover:border hover:border-mint rounded-full px-4 py-2 whitespace-nowrap`}
+              pathname === '/about' ? 'border-mint' : ''
+            } border border-transparent text-white hover:border hover:border-mint rounded-full px-4 py-2 whitespace-nowrap transition-all`}
           >
             about me
           </Link>
           <Link
             href='/skills'
             className={`${
-              pathname === '/skills' ? 'border border-mint' : ''
-            } text-white hover:border hover:border-mint rounded-full px-4 py-2 whitespace-nowrap`}
+              pathname === '/skills' ? 'border-mint' : ''
+            } border border-transparent text-white hover:border hover:border-mint rounded-full px-4 py-2 whitespace-nowrap transition-all`}
           >
             skills
           </Link>
           <Link
             href='/experience'
             className={`${
-              pathname === '/experience' ? 'border border-mint' : ''
-            } text-white hover:border hover:border-mint rounded-full px-4 py-2 whitespace-nowrap`}
+              pathname === '/experience' ? 'border-mint' : ''
+            } border border-transparent text-white hover:border hover:border-mint rounded-full px-4 py-2 whitespace-nowrap transition-all`}
           >
             experience
           </Link>
           <Link
             href='/contact'
             className={`${
-              pathname === '/contact' ? 'border border-mint' : ''
-            } text-white hover:border hover:border-mint rounded-full px-4 py-2 whitespace-nowrap`}
+              pathname === '/contact' ? 'border-mint' : ''
+            } border border-transparent text-white hover:border hover:border-mint rounded-full px-4 py-2 whitespace-nowrap transition-all`}
           >
             contact
           </Link>
