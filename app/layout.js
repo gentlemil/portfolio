@@ -1,10 +1,12 @@
 import { Ubuntu } from 'next/font/google'
-
+import { ToastContainer } from 'react-toastify'
 import AuthProvider from '@/components/authProvider'
 import Hero from '@/components/Hero'
 import Navbar from '@/components/Navbar'
+import Footer from '@/components/Footer'
 
 import '@/assets/styles/globals.css'
+import 'react-toastify/dist/ReactToastify.css'
 
 const ubuntu = Ubuntu({
   weight: ['300', '400', '500', '700'],
@@ -24,6 +26,8 @@ const MainLayout = ({ children }) => {
           <Hero />
           <Navbar />
           <main className='text-gray-200'>{children}</main>
+          <Footer />
+          <ToastContainer />
         </body>
       </html>
     </AuthProvider>

@@ -1,5 +1,3 @@
-import Header from '@/components/Header'
-
 const AboutPage = () => {
   return (
     <section id='about' className='container px-20 py-8'>
@@ -9,25 +7,28 @@ const AboutPage = () => {
 
       <div className='flex flex-col items-center justify-center gap-8 pt-12 text-justify text-xl md:pr-16'>
         <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus
-          neque minus adipisci doloribus fugiat fuga aperiam ipsum, ad dolorem
-          quod rerum magnam architecto a, illum earum dignissimos excepturi
-          nobis labore. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Sint soluta distinctio ratione repudiandae molestiae dicta unde saepe
-          officiis eveniet eligendi qui quasi quisquam asperiores, perferendis,
-          voluptatibus quibusdam numquam, inventore doloribus?
+          Hello! I'm a Frontend Developer who transitioned from bartending in
+          Krakow's bustling hospitality scene to tech during the pandemic. This
+          shift sparked my passion for crafting high-quality digital solutions,
+          enhancing user experience, and contributing to team success.
+        </p>
+
+        <p>
+          Professionally, I have worked on diverse projects in e-learning,
+          beauty, and point-of-sale systems, always striving to push the
+          boundaries of technology and creativity. I thrive in environments that
+          challenge me to grow and innovate.
         </p>
         <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus
-          neque minus adipisci doloribus fugiat fuga aperiam ipsum, ad dolorem
-          quod rerum magnam architecto a, illum earum dignissimos excepturi
-          nobis labore.
+          In my free time, I enjoy mountain trekking, running with my dog,
+          bushcraft, and traveling. These activities not only fulfill my
+          personal passions but also bring fresh perspectives to my professional
+          work.
         </p>
         <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus
-          neque minus adipisci doloribus fugiat fuga aperiam ipsum, ad dolorem
-          quod rerum magnam architecto a, illum earum dignissimos excepturi
-          nobis labore.
+          I am eager to collaborate on projects that are as dynamic and
+          forward-thinking as I am. Let's connect and create something
+          outstanding together!
         </p>
       </div>
     </section>

@@ -5,7 +5,7 @@ import { FaLinkedin, FaGithub, FaFacebook, FaInstagram } from 'react-icons/fa'
 const Footer = () => {
   const currentYear = new Date().getFullYear()
   return (
-    <footer className='py-4 mt-24'>
+    <footer className='py-4 mt-40'>
       <div className='container mx-auto flex flex-col'>
         <div
           id='social'
@@ -28,10 +28,12 @@ const Footer = () => {
           </Link>
         </div>
 
-        <p className='text-center text-smmt-2 md:mt-0'>
+        <p className='text-center text-smmt-2 md:mt-0 text-gray-200'>
           &copy; {currentYear} Milosz Bukala.
         </p>
-        <p className='text-center text-smmt-2 md:mt-0'>All rights reserved.</p>
+        <p className='text-center  text-gray-200 md:mt-0'>
+          All rights reserved.
+        </p>
       </div>
     </footer>
   )

@@ -13,7 +13,7 @@ const MessageSchema = new Schema(
     phone: {
       type: String,
     },
-    content: {
+    message: {
       type: String,
       required: [true, 'Message is required'],
     },

@@ -1,4 +1,4 @@
-import Footer from '@/components/Footer'
+import Link from 'next/link'
 
 const HomePage = () => {
   return (
@@ -21,11 +21,12 @@ const HomePage = () => {
       </h4>
 
       <div className='w-full flex justify-center items-center pt-20'>
-        <button className='border text-xl'>Contact me!</button>
-      </div>
-
-      <div className='pt-40'>
-        <Footer />
+        <Link
+          href='/contact'
+          className='border-2 border-mint hover:border-mint/50 text-gray-200 text-2xl font-normal tracking-wider py-2 px-6 rounded-full mx-auto focus:outline-none focus:shadow-outline flex items-center justify-center'
+        >
+          contact me!
+        </Link>
       </div>
     </div>
   )
