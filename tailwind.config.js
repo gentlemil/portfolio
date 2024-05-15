@@ -11,7 +11,7 @@ module.exports = {
         sans: ['Ubuntu', 'Roboto', 'sans-serif'],
       },
       gridTemplateColumns: {
-        '70/30': '70% 28%',
+        '40/60': '38% 60%',
         '30/70': '28% 70%',
       },
       colors: {

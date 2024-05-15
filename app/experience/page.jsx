@@ -12,7 +12,7 @@ const ExperiencePage = async () => {
   const participations = await Participation.find({}).lean()
 
   return (
-    <section className='container px-20 py-8'>
+    <section className='container px-4 lg:px-20 py-8'>
       <h2 className='text-4xl font-medium tracking-wider text-gray-200 pb-12'>
         my work <span className='text-mint'>experience</span> and own projects
       </h2>
@@ -29,7 +29,7 @@ const ExperiencePage = async () => {
       {ownProjects.map((project) => (
         <div
           key={project._id}
-          className='grid grid-cols-2 gap-4 items-start py-12 border-b border-mint/50 last-of-type:pb-0 last-of-type:border-none'
+          className='lg:grid grid-cols-2 gap-4 items-start py-4 lg:py-12 border-b border-mint/50 last-of-type:pb-0 last-of-type:border-none'
         >
           <div>
             <h2 className='text-3xl font-medium tracking-wider pb-6'>
@@ -68,7 +68,7 @@ const ExperiencePage = async () => {
             )}
           </div>
 
-          <div className='w-full flex justify-center'>
+          <div className='w-full flex justify-center py-4 lg:py-0'>
             <Browser url={project.url} image={project.images[0] || notFound} />
           </div>
 
@@ -94,13 +94,15 @@ const ExperiencePage = async () => {
         projects <span className='text-mint'>participations</span>
       </h2>
 
-      <div className='grid grid-cols-3 gap-4'>
+      <div className='grid grid-cols-1 lg:grid-cols-3 gap-4'>
         {participations.map((project) => (
-          <Browser
-            key={project._id}
-            url={project.url}
-            image={project.images[0] || notFound}
-          />
+          <div className='w-full flex justify-center py-4 lg:py-0'>
+            <Browser
+              key={project._id}
+              url={project.url}
+              image={project.images[0] || notFound}
+            />
+          </div>
         ))}
       </div>
     </section>

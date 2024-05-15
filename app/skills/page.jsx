@@ -78,11 +78,11 @@ const SkillsPage = () => {
   ]
 
   return (
-    <section className='container px-20 py-8'>
+    <section className='container px-4 lg:px-20 py-8'>
       <h2 className='text-4xl font-medium tracking-wider text-gray-200 pb-20'>
         technologies I <span className='text-mint'>know</span> and use
       </h2>
-      <div className='grid grid-cols-1 md:grid-cols-3 gap-4'>
+      <div className='flex flex-col justify-start items-center lg:items-stretch lg:grid lg:grid-cols-3 gap-4'>
         {/* frontend */}
         <div className='border border-mint rounded-md shadow-md flex flex-col justify-start items-center gap-3 p-4'>
           <Image
