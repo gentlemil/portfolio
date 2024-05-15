@@ -4,7 +4,7 @@ import { FaSearch } from 'react-icons/fa'
 
 const Browser = ({ url, image }) => {
   return (
-    <div className='max-w-100vw lg:max-w-[424px] border-2 border-mint/50  hover:border-mint rounded-lg overflow-hidden'>
+    <div className='max-w-100vw lg:max-w-[424px] w-full border-2 border-mint/50  hover:border-mint rounded-lg overflow-hidden'>
       <div className='h-8 flex justify-start items-center px-2 gap-2 pb-1'>
         <div className='flex'>
           <div className='w-3 h-3 rounded-full bg-red-500 mr-2'></div>
@@ -27,7 +27,9 @@ const Browser = ({ url, image }) => {
           </span>
         </div>
       </div>
-      <Image src={image} alt='' height={0} width={'424'} sizes='100%' />
+      <div className='w-full min-h-[220px] border-t border-mint relative'>
+        <Image src={image} alt='' layout='fill' objectFit='cover' />
+      </div>
     </div>
   )
 }
