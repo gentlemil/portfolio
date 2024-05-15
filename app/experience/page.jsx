@@ -4,12 +4,20 @@ import Browser from '@/components/Browser'
 import notFound from '@/assets/images/not-found.png'
 import Project from '@/models/Project'
 import Participation from '@/models/Participation'
+import { convertToSerializeableObject } from '@/utils/convertToObject'
 
 const ExperiencePage = async () => {
   await connectDB()
 
-  const ownProjects = await Project.find({ status: true }).lean()
-  const participations = await Participation.find({}).lean()
+  if (!Project || !Participation) {
+    return null
+  }
+
+  const ownProjectsDoc = await Project.find({ status: true }).lean()
+  const ownProjects = convertToSerializeableObject(ownProjectsDoc)
+
+  const participationsDoc = await Participation.find({}).lean()
+  const participations = convertToSerializeableObject(participationsDoc)
 
   return (
     <section className='container mx-auto px-4 lg:px-20 py-8'>
