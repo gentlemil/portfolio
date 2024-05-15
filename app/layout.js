@@ -14,7 +14,7 @@ const ubuntu = Ubuntu({
 })
 
 export const metadata = {
-  title: 'Create Next App',
+  title: 'miloszbukaladotpl',
   description: 'Check who I am, what I do and let talk about your project.',
 }
 

@@ -4,11 +4,13 @@ const UserDashboardPage = () => {
       <h2 className='text-4xl font-medium tracking-wider text-gray-200 pb-20'>
         my <span className='text-mint'>dashboard</span>
       </h2>
-      <div>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad
-        exercitationem quam recusandae? Molestiae et delectus similique culpa,
-        sunt voluptatibus quos ipsum fugiat magnam recusandae quisquam nisi,
-        aperiam minima, in dolores!
+      <div className='grid grid-cols-1 md:grid-cols-30/70 w-full gap-6 items-start'>
+        <div className='border border-mint rounded-md p-4 min-h-40'>
+          <p className='text-justify'>Sidebar</p>
+        </div>
+        <div className='border border-mint rounded-md p-4 min-h-40'>
+          <p>On the right side will add some statistics</p>
+        </div>
       </div>
     </section>
   )

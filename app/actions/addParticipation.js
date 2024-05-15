@@ -4,16 +4,16 @@ import Participation from '@/models/Participation'
 import cloudinary from '@/config/cloudinary'
 import { revalidatePath } from 'next/cache'
 import { redirect } from 'next/navigation'
+import { getSessionUser } from '@/utils/getSessionUser'
 
 async function addParticipation(formData) {
   await connectDB()
 
-  // should check user session here
-  // const sessionUser = await getSessionUser()
+  const sessionUser = await getSessionUser()
 
-  // if (!sessionUser || !sessionUser.userId) {
-  //   throw new Error('You must be logged in to add a property')
-  // }
+  if (!sessionUser || !sessionUser.userId) {
+    throw new Error('You must be logged in to add a participation project')
+  }
 
   const images = formData.getAll('images').filter((image) => image.name !== '')
 

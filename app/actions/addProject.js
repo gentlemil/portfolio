@@ -1,19 +1,19 @@
 'use server'
 import connectDB from '@/config/database'
-import Project from '@/models/Project'
-import cloudinary from '@/config/cloudinary'
 import { revalidatePath } from 'next/cache'
 import { redirect } from 'next/navigation'
+import Project from '@/models/Project'
+import cloudinary from '@/config/cloudinary'
+import { getSessionUser } from '@/utils/getSessionUser'
 
 async function addProject(formData) {
   await connectDB()
 
-  // should check user session here
-  // const sessionUser = await getSessionUser()
+  const sessionUser = await getSessionUser()
 
-  // if (!sessionUser || !sessionUser.userId) {
-  //   throw new Error('You must be logged in to add a property')
-  // }
+  if (!sessionUser || !sessionUser.userId) {
+    throw new Error('You must be logged in to add a project')
+  }
 
   const images = formData.getAll('images').filter((image) => image.name !== '')
 
