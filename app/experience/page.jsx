@@ -9,10 +9,6 @@ import { convertToSerializeableObject } from '@/utils/convertToObject'
 const ExperiencePage = async () => {
   await connectDB()
 
-  if (!Project || !Participation) {
-    return null
-  }
-
   const ownProjectsDoc = await Project.find({ status: true }).lean()
   const ownProjects = convertToSerializeableObject(ownProjectsDoc)
 
