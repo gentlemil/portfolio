@@ -2,7 +2,7 @@ import ContactForm from '@/components/ContactForm'
 
 const ContactPage = () => {
   return (
-    <section className='container px-20 py-8'>
+    <section className='container mx-auto px-4 lg:px-20 py-8'>
       <h2 className='text-4xl font-medium tracking-wider text-gray-200 pb-12'>
         contact <span className='text-mint'>me</span>
       </h2>

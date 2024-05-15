@@ -12,7 +12,7 @@ const ExperiencePage = async () => {
   const participations = await Participation.find({}).lean()
 
   return (
-    <section className='container px-4 lg:px-20 py-8'>
+    <section className='container mx-auto px-4 lg:px-20 py-8'>
       <h2 className='text-4xl font-medium tracking-wider text-gray-200 pb-12'>
         my work <span className='text-mint'>experience</span> and own projects
       </h2>
@@ -94,7 +94,7 @@ const ExperiencePage = async () => {
         projects <span className='text-mint'>participations</span>
       </h2>
 
-      <div className='grid grid-cols-1 lg:grid-cols-3 gap-4'>
+      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
         {participations.map((project) => (
           <div className='w-full flex justify-center py-4 lg:py-0'>
             <Browser

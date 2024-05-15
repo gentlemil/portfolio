@@ -20,12 +20,21 @@ const HomePage = () => {
         together.
       </h4>
 
-      <div className='w-full flex justify-center items-center pt-20'>
+      <div className='w-full flex flex-col justify-center items-center gap-4 pt-20'>
         <Link
           href='/contact'
           className='border-2 border-mint hover:border-mint/50 text-gray-200 text-2xl font-normal tracking-wider py-2 px-6 rounded-full mx-auto focus:outline-none focus:shadow-outline flex items-center justify-center'
         >
           contact me!
+        </Link>
+
+        {/* TODO! */}
+        <Link
+          href='/'
+          target='_blank'
+          className='border-2 border-mint hover:border-mint/50 text-gray-200 text-2xl font-normal tracking-wider py-2 px-6 rounded-full mx-auto focus:outline-none focus:shadow-outline flex items-center justify-center'
+        >
+          get my resume
         </Link>
       </div>
     </div>

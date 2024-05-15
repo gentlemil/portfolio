@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 const AboutPage = () => {
   return (
-    <section id='about' className='container px-4 md:px-20 py-8'>
+    <section id='about' className='container mx-auto px-4 md:px-20 py-8'>
       <h2 className='text-4xl font-medium tracking-wider text-gray-200 pb-12'>
         a little bit more <span className='text-mint'>about</span> me
       </h2>

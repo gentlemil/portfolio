@@ -78,7 +78,7 @@ const SkillsPage = () => {
   ]
 
   return (
-    <section className='container px-4 lg:px-20 py-8'>
+    <section className='container mx-auto px-4 lg:px-20 py-8'>
       <h2 className='text-4xl font-medium tracking-wider text-gray-200 pb-20'>
         technologies I <span className='text-mint'>know</span> and use
       </h2>
