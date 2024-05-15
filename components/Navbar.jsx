@@ -114,18 +114,6 @@ const Navbar = () => {
                     tabIndex='-1'
                   >
                     <Link
-                      href='user/dashboard'
-                      className='block px-4 py-2 text-sm text-gray-700'
-                      role='menuitem'
-                      tabIndex='-1'
-                      id='user-menu-item-0'
-                      onClick={() => {
-                        setIsProfileMenuOpen(false)
-                      }}
-                    >
-                      Dashboard
-                    </Link>
-                    <Link
                       href='user/messages'
                       className='block px-4 py-2 text-sm text-gray-700'
                       role='menuitem'
@@ -136,6 +124,30 @@ const Navbar = () => {
                       }}
                     >
                       Messages
+                    </Link>
+                    <Link
+                      href='user/projects/add'
+                      className='block px-4 py-2 text-sm text-gray-700'
+                      role='menuitem'
+                      tabIndex='-1'
+                      id='user-menu-item-0'
+                      onClick={() => {
+                        setIsProfileMenuOpen(false)
+                      }}
+                    >
+                      Add Project
+                    </Link>
+                    <Link
+                      href='user/participations/add'
+                      className='block px-4 py-2 text-sm text-gray-700'
+                      role='menuitem'
+                      tabIndex='-1'
+                      id='user-menu-item-0'
+                      onClick={() => {
+                        setIsProfileMenuOpen(false)
+                      }}
+                    >
+                      Add Participation
                     </Link>
 
                     <button
