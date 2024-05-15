@@ -1,11 +1,11 @@
 'use server'
 import connectDB from '@/config/database'
-import Project from '@/models/Project'
+import Participation from '@/models/Participation'
 import cloudinary from '@/config/cloudinary'
 import { revalidatePath } from 'next/cache'
 import { redirect } from 'next/navigation'
 
-async function addProject(formData) {
+async function addParticipation(formData) {
   await connectDB()
 
   // should check user session here
@@ -17,12 +17,9 @@ async function addProject(formData) {
 
   const images = formData.getAll('images').filter((image) => image.name !== '')
 
-  const projectData = {
+  const participationData = {
     name: formData.get('name'),
-    description: formData.get('description'),
     url: formData.get('url'),
-    github: formData.get('github'),
-    tech_stack: formData.getAll('tech_stack'),
   }
 
   const imageUrls = []
@@ -39,22 +36,22 @@ async function addProject(formData) {
     const result = await cloudinary.uploader.upload(
       `data:image/png;base64,${imageBase64}`,
       {
-        folder: 'portfolio/projects',
+        folder: 'portfolio/participations',
       }
     )
 
     imageUrls.push(result.secure_url)
   }
 
-  projectData.images = imageUrls
+  participationData.images = imageUrls
 
-  const newProperty = new Project(projectData)
-  await newProperty.save()
+  const newParticipation = new Participation(participationData)
+  await newParticipation.save()
 
   // revalidate the cache
   revalidatePath('/', 'layout')
 
-  redirect(`/user/dashboard/projects`)
+  redirect(`/user/participations/add`)
 }
 
-export default addProject
+export default addParticipation

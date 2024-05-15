@@ -3,38 +3,13 @@ import connectDB from '@/config/database'
 import Browser from '@/components/Browser'
 import notFound from '@/assets/images/not-found.png'
 import Project from '@/models/Project'
-
-const participations = {
-  'polski pcs': {
-    url: 'https://polskipcs.pl',
-    image: notFound,
-  },
-  bookooy: {
-    url: 'https://bookooy.com',
-    image: notFound,
-  },
-  mycore: {
-    url: 'https://app.mycore.com',
-    image: notFound,
-  },
-  dujourbaby: {
-    url: 'https://www.dujourbaby.com',
-    image: notFound,
-  },
-  'swim express': {
-    url: 'https://swimexpress.co',
-    image: notFound,
-  },
-  neopos: {
-    url: 'https://www.neopos.pl',
-    image: notFound,
-  },
-}
+import Participation from '@/models/Participation'
 
 const ExperiencePage = async () => {
   await connectDB()
 
   const ownProjects = await Project.find({ status: true }).lean()
+  const participations = await Participation.find({}).lean()
 
   return (
     <section className='container px-20 py-8'>
@@ -42,7 +17,6 @@ const ExperiencePage = async () => {
         my work <span className='text-mint'>experience</span> and own projects
       </h2>
 
-      {/* section description */}
       <div className='pb-12'>
         Explore my portfolio to see a variety of impactful projects I've
         developed, ranging from e-learning platforms to beauty apps and
@@ -51,6 +25,7 @@ const ExperiencePage = async () => {
         helped businesses innovate and grow!
       </div>
 
+      {/* own projects */}
       {ownProjects.map((project) => (
         <div
           key={project._id}
@@ -94,7 +69,7 @@ const ExperiencePage = async () => {
           </div>
 
           <div className='w-full flex justify-center'>
-            <Browser url={project.url} image={project.images[0]} />
+            <Browser url={project.url} image={project.images[0] || notFound} />
           </div>
 
           <div className='col-span-2'>
@@ -114,13 +89,18 @@ const ExperiencePage = async () => {
         </div>
       ))}
 
+      {/* participations */}
       <h2 className='text-4xl font-medium tracking-wider text-gray-200 py-12'>
         projects <span className='text-mint'>participations</span>
       </h2>
 
       <div className='grid grid-cols-3 gap-4'>
-        {Object.entries(participations).map(([projectName, project]) => (
-          <Browser key={projectName} url={project.url} image={project.image} />
+        {participations.map((project) => (
+          <Browser
+            key={project._id}
+            url={project.url}
+            image={project.images[0] || notFound}
+          />
         ))}
       </div>
     </section>
