@@ -12,8 +12,7 @@ const HomePage = () => {
       </h1>
 
       <h4 className='text-2xl font-normal tracking-wide'>
-        I am full-stack web developer based in Cracow, PL, backpacer,
-        bushcrafter.
+        I am full-stack web developer based in Poland, backpacer, bushcrafter.
       </h4>
       <h4 className='text-2xl font-normal tracking-wide'>
         Let's make something <span className='text-mint'>special</span>{' '}
