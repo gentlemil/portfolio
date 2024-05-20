@@ -136,6 +136,30 @@ const Navbar = () => {
                       Dashboard
                     </Link>
                     <Link
+                      href='/user/projects'
+                      className='block px-4 py-2 text-sm text-gray-700'
+                      role='menuitem'
+                      tabIndex='-1'
+                      id='user-menu-item-0'
+                      onClick={() => {
+                        setIsProfileMenuOpen(false)
+                      }}
+                    >
+                      Projects
+                    </Link>
+                    <Link
+                      href='/user/skills'
+                      className='block px-4 py-2 text-sm text-gray-700'
+                      role='menuitem'
+                      tabIndex='-1'
+                      id='user-menu-item-0'
+                      onClick={() => {
+                        setIsProfileMenuOpen(false)
+                      }}
+                    >
+                      Skills
+                    </Link>
+                    <Link
                       href='/user/messages'
                       className='block px-4 py-2 text-sm text-gray-700'
                       role='menuitem'
@@ -147,31 +171,6 @@ const Navbar = () => {
                     >
                       Messages
                     </Link>
-                    <Link
-                      href='/user/projects/add'
-                      className='block px-4 py-2 text-sm text-gray-700'
-                      role='menuitem'
-                      tabIndex='-1'
-                      id='user-menu-item-0'
-                      onClick={() => {
-                        setIsProfileMenuOpen(false)
-                      }}
-                    >
-                      Add Project
-                    </Link>
-                    <Link
-                      href='/user/participations/add'
-                      className='block px-4 py-2 text-sm text-gray-700'
-                      role='menuitem'
-                      tabIndex='-1'
-                      id='user-menu-item-0'
-                      onClick={() => {
-                        setIsProfileMenuOpen(false)
-                      }}
-                    >
-                      Add Participation
-                    </Link>
-
                     <button
                       onClick={() => {
                         setIsProfileMenuOpen(false)
