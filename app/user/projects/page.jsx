@@ -1,5 +1,6 @@
 'use client'
 import Link from 'next/link'
+import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import deleteProject from '@/app/actions/deleteProject'
 import Spinner from '@/components/Spinner'
@@ -131,13 +132,20 @@ const UserProjectsPage = () => {
                       ))}
                     </div>
                   </td>
-                  <td className='px-2 whitespace-wrap'>
+                  <td className='px-2 whitespace-wrap !w-[100px]'>
                     <Link
                       className='underline hover:text-mint'
                       href={project.images[0]}
                       target='_blank'
                     >
-                      image
+                      <div className='w-full min-h-10  relative'>
+                        <Image
+                          src={project.images[0]}
+                          alt=''
+                          layout='fill'
+                          objectFit='contain'
+                        />
+                      </div>
                     </Link>
                   </td>
                   <td className='px-2'>

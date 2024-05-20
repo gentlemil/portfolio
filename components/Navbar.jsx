@@ -1,8 +1,8 @@
 'use client'
 import { signIn, signOut, useSession, getProviders } from 'next-auth/react'
-import { useState, useEffect } from 'react'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
+import { useState, useEffect } from 'react'
 import { FaGoogle, FaUserCircle } from 'react-icons/fa'
 
 const Navbar = () => {
@@ -27,41 +27,51 @@ const Navbar = () => {
           <div className='flex justify-start items-center gap-2 md:gap-4 overflow-scroll'>
             <Link
               href='/'
-              className={`${
-                pathname === '/' ? 'border-mint' : ''
-              } border border-transparent text-white hover:border hover:border-mint rounded-full px-4 py-2 whitespace-nowrap transition-all`}
+              className={`border ${
+                pathname === '/'
+                  ? '  text-white border-mint'
+                  : ' border-transparent text-white hover:border hover:border-mint '
+              } rounded-full px-4 py-2 whitespace-nowrap transition-all`}
             >
               Home
             </Link>
             <Link
               href='/about'
-              className={`${
-                pathname === '/about' ? 'border-mint' : ''
-              } border border-transparent text-white hover:border hover:border-mint rounded-full px-4 py-2 whitespace-nowrap transition-all`}
+              className={`border ${
+                pathname === '/about'
+                  ? '  text-white border-mint'
+                  : ' border-transparent text-white hover:border hover:border-mint '
+              } rounded-full px-4 py-2 whitespace-nowrap transition-all`}
             >
               about me
             </Link>
             <Link
               href='/skills'
-              className={`${
-                pathname === '/skills' ? 'border-mint' : ''
-              } border border-transparent text-white hover:border hover:border-mint rounded-full px-4 py-2 whitespace-nowrap transition-all`}
+              className={`border ${
+                pathname === '/skills'
+                  ? '  text-white border-mint'
+                  : ' border-transparent text-white hover:border hover:border-mint '
+              } rounded-full px-4 py-2 whitespace-nowrap transition-all`}
             >
               skills
             </Link>
             <Link
               href='/experience'
-              className={`${
-                pathname === '/experience' ? 'border-mint' : ''
-              } border border-transparent text-white hover:border hover:border-mint rounded-full px-4 py-2 whitespace-nowrap transition-all`}
+              className={`border ${
+                pathname === '/experience'
+                  ? '  text-white border-mint'
+                  : ' border-transparent text-white hover:border hover:border-mint '
+              } rounded-full px-4 py-2 whitespace-nowrap transition-all`}
             >
               experience
             </Link>
             <Link
               href='/contact'
-              className={`${
-                pathname === '/contact' ? 'border-mint' : ''
-              } border border-transparent text-white hover:border hover:border-mint rounded-full px-4 py-2 whitespace-nowrap transition-all`}
+              className={`border ${
+                pathname === '/contact'
+                  ? '  text-white border-mint'
+                  : ' border-transparent text-white hover:border hover:border-mint '
+              } rounded-full px-4 py-2 whitespace-nowrap transition-all`}
             >
               contact
             </Link>
