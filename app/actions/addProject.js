@@ -54,7 +54,7 @@ async function addProject(formData) {
   // revalidate the cache
   revalidatePath('/', 'layout')
 
-  redirect(`/user/dashboard/projects`)
+  redirect(`/user/projects`)
 }
 
 export default addProject

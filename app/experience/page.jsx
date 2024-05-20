@@ -12,7 +12,9 @@ const ExperiencePage = async () => {
   const ownProjectsDoc = await Project.find({ status: true }).lean()
   const ownProjects = convertToSerializeableObject(ownProjectsDoc)
 
-  const participationsDoc = await Participation.find({}).lean()
+  const participationsDoc = await Participation.find({
+    status: true,
+  }).lean()
   const participations = convertToSerializeableObject(participationsDoc)
 
   return (

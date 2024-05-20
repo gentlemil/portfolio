@@ -13,7 +13,7 @@ const MainLayout = ({ children }) => {
   return (
     <AuthProvider>
       <section className=' mx-auto px-4 lg:px-20 py-8'>
-        <div className='grid grid-cols-1 md:grid-cols-20/80 w-full gap-6 items-start'>
+        <div className='grid grid-cols-1 md:grid-cols-15/85 w-full gap-6 items-start'>
           <div className='border border-mint rounded-md p-4 min-h-40'>
             <ul>
               <li className='border border-transparent hover:border-mint text-gray-200 hover:text-mint rounded-lg px-4 py-2 transition-all'>
@@ -33,9 +33,7 @@ const MainLayout = ({ children }) => {
               </li>
             </ul>
           </div>
-          <main className='border border-mint rounded-md p-4 min-h-40'>
-            {children}
-          </main>
+          <main className='min-h-40'>{children}</main>
         </div>
       </section>
     </AuthProvider>

@@ -13,7 +13,7 @@ module.exports = {
       gridTemplateColumns: {
         '40/60': '38% 60%',
         '30/70': '28% 70%',
-        '20/80': '20% 78%',
+        '15/85': '15% 83%',
       },
       colors: {
         mint: '#1DB78E',
