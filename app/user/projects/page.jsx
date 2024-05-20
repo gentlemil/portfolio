@@ -58,7 +58,7 @@ const UserProjectsPage = () => {
 
       <Link
         href='/user/projects/add'
-        className='absolute top-0 right-8 text-white hover:text-mint border border-mint rounded-full px-4 py-2 whitespace-nowrap transition-all'
+        className='absolute top-0 right-0 text-white hover:text-mint border border-mint rounded-full px-4 py-2 whitespace-nowrap transition-all'
       >
         add new
       </Link>
@@ -88,7 +88,7 @@ const UserProjectsPage = () => {
             <tbody>
               {projects.map((project, index) => (
                 <tr
-                  key={project.id}
+                  key={project._id}
                   className='hover:bg-mint/10 text-center transition-all border-b border-mint/20'
                 >
                   <td className='px-2'>{index + 1}</td>
@@ -109,6 +109,7 @@ const UserProjectsPage = () => {
                     <div className='flex flex-col justify-center items-center'>
                       {project.github.map((url, index) => (
                         <Link
+                          key={index}
                           className='underline hover:text-mint'
                           href={url}
                           target='_blank'
@@ -142,22 +143,34 @@ const UserProjectsPage = () => {
                   <td className='px-2'>
                     <div className='w-full flex justify-center items-center'>
                       {project.status ? (
-                        <GiConfirmed className='text-green-200 text-center' />
+                        <GiConfirmed
+                          size={'1.25rem'}
+                          className='text-green-200 text-center'
+                        />
                       ) : (
-                        <RxCrossCircled className='text-red-500' />
+                        <RxCrossCircled
+                          size={'1.25rem'}
+                          className='text-red-500'
+                        />
                       )}
                     </div>
                   </td>
                   <td className='px-2'>
                     <div className='flex justify-center items-center gap-2'>
-                      <button type='button'>
-                        <FaRegEdit className='text-gray-200 hover:text-mint transition-all' />
-                      </button>
+                      <Link href={`projects/${project._id}/edit`}>
+                        <FaRegEdit
+                          size={'1.25rem'}
+                          className='text-gray-200 hover:text-mint transition-all'
+                        />
+                      </Link>
                       <button
                         type='button'
                         onClick={() => handleDeleteProject(project._id)}
                       >
-                        <FaRegTrashAlt className='text-gray-200 hover:text-mint transition-all' />
+                        <FaRegTrashAlt
+                          size={'1.25rem'}
+                          className='text-gray-200 hover:text-mint transition-all'
+                        />
                       </button>
                     </div>
                   </td>
