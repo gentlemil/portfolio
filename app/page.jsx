@@ -27,9 +27,8 @@ const HomePage = () => {
           contact me!
         </Link>
 
-        {/* TODO! */}
         <Link
-          href='/'
+          href='https://drive.google.com/file/d/1DxXJBug_5CJaYCTV2F8QCcUAgEEYOB2O/view?usp=sharing'
           target='_blank'
           className='border-2 border-mint hover:border-mint/50 text-gray-200 text-2xl font-normal tracking-wider py-2 px-6 rounded-full mx-auto focus:outline-none focus:shadow-outline flex items-center justify-center'
         >

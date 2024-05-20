@@ -1,8 +1,8 @@
-const UserMessagesPage = () => {
+const UserMainPage = () => {
   return (
     <section className='container mx-auto px-4'>
       <h2 className='text-4xl font-medium tracking-wider text-gray-200 pb-10'>
-        <span className='text-mint'>messages</span>
+        <span className='text-mint'>main</span> page
       </h2>
       <div className='text-gray-200 italic tracking-wider font-thin'>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad
@@ -14,4 +14,4 @@ const UserMessagesPage = () => {
   )
 }
 
-export default UserMessagesPage
+export default UserMainPage

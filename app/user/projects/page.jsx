@@ -1,10 +1,10 @@
 const UserProjectsPage = () => {
   return (
-    <section className='container mx-auto px-4 lg:px-20 py-8'>
-      <h2 className='text-4xl font-medium tracking-wider text-gray-200 pb-20'>
-        my own <span className='text-mint'>projects</span>
+    <section className='container mx-auto px-4'>
+      <h2 className='text-4xl font-medium tracking-wider text-gray-200 pb-10'>
+        own <span className='text-mint'>projects</span>
       </h2>
-      <div>
+      <div className='text-gray-200 italic tracking-wider font-thin'>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad
         exercitationem quam recusandae? Molestiae et delectus similique culpa,
         sunt voluptatibus quos ipsum fugiat magnam recusandae quisquam nisi,
