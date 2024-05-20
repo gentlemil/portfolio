@@ -8,6 +8,11 @@
 
 [miloszbukaladotpl](https://miloszbukala.vercel.app/) is a fullstack application build with [NextJS](https://nextjs.org/) (the JavaScript framework for React) and a non-relational [MongoDB](https://www.mongodb.com/) data platform.
 
+<img width="300" src="./assets//images/screenshot-1.png" alt="Screenshot 1">
+<img width="300" src="./assets//images/screenshot-2.png" alt="Screenshot 2">
+<img width="300" src="./assets//images/screenshot-3.png" alt="Screenshot 3">
+<img width="300" src="./assets//images/screenshot-4.png" alt="Screenshot 4">
+
 ### Provided functionalities
 
 ```bash
