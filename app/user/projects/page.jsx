@@ -23,7 +23,7 @@ const UserProjectsPage = () => {
           setProjects(data.projects)
         }
       } catch (error) {
-        console.error(error)
+        console.error('error', error)
       } finally {
         setLoading(false)
       }
@@ -94,7 +94,7 @@ const UserProjectsPage = () => {
                 >
                   <td className='px-2'>{index + 1}</td>
                   <td className='px-2 '>{project.name}</td>
-                  <td className='px-2 whitespace-wrap'>
+                  <td className='px-2 whitespace-wrap py-1'>
                     {project.description}
                   </td>
                   <td className='px-2 whitespace-wrap'>
@@ -121,7 +121,7 @@ const UserProjectsPage = () => {
                     </div>
                   </td>
                   <td className='px-2 whitespace-wrap'>
-                    <div className='flex flex-col'>
+                    <div className='flex flex-col py-1'>
                       {project.tech_stack.map((stack, index) => (
                         <p
                           key={index}
