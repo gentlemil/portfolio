@@ -15,12 +15,15 @@ export const GET = async (request) => {
     const search = searchParams.get('search') || ''
     const orderBy = searchParams.get('orderBy') || 'desc'
     const sortBy = searchParams.get('sortBy') || 'name'
+    const skillType = searchParams.get('type')
 
     const skills = await Skill.find({})
       .skip(skip)
       .limit(limit)
       .where('name')
       .regex(new RegExp(search, 'i'))
+      .where('type')
+      .regex(new RegExp(skillType, 'i'))
       .sort({ [sortBy]: orderBy })
       .lean()
 

@@ -15,9 +15,10 @@ import SkillSearchForm from '@/components/SkillSearchForm'
 const UserSkillsPage = () => {
   const [skills, setSkills] = useState([])
   const [loading, setLoading] = useState(true)
-  
+
   const [page, setPage] = useState(1)
   const [search, setSearch] = useState('')
+  const [type, setType] = useState('')
   const [totalSkills, setTotalSkills] = useState(0)
 
   const pageSize = 10
@@ -28,7 +29,7 @@ const UserSkillsPage = () => {
         const res = await fetch(
           `/api/skills?limit=${pageSize}&skip=${
             (page - 1) * pageSize
-          }&page=${page}&search=${search}`
+          }&page=${page}&search=${search}&type=${type}`
         )
 
         if (res.status === 200) {
@@ -44,7 +45,7 @@ const UserSkillsPage = () => {
     }
 
     fetchSkills()
-  }, [page, search])
+  }, [page, search, type])
 
   const handleSearchQuery = (searchQuery) => {
     setSearch(searchQuery)
@@ -52,6 +53,11 @@ const UserSkillsPage = () => {
 
   const handlePageQuery = (page) => {
     setPage(page)
+  }
+
+  const handleTypeQuery = (type) => {
+    setType(type)
+    console.log(type)
   }
 
   const handleDeleteSkill = async (id) => {
@@ -95,7 +101,10 @@ const UserSkillsPage = () => {
       {!loading && skills.length > 0 && (
         <div className='text-gray-200 italic tracking-wider font-thin overflow-hidden'>
           <div className='w-full flex justify-start items-center gap-4'>
-            <SkillSearchForm sendSearchQuery={handleSearchQuery} />
+            <SkillSearchForm
+              sendSearchQuery={handleSearchQuery}
+              sendTypeQuery={handleTypeQuery}
+            />
           </div>
           <table className='table w-full overflow-scroll'>
             <thead className='border-b border-mint text-center tracking-wider'>
