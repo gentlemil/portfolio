@@ -9,19 +9,32 @@ import { toast } from 'react-toastify'
 import { FaRegEdit, FaRegTrashAlt } from 'react-icons/fa'
 import { GiConfirmed } from 'react-icons/gi'
 import { RxCrossCircled } from 'react-icons/rx'
+import Pagination from '@/components/Pagination'
+import SkillSearchForm from '@/components/SkillSearchForm'
 
 const UserSkillsPage = () => {
   const [skills, setSkills] = useState([])
   const [loading, setLoading] = useState(true)
+  
+  const [page, setPage] = useState(1)
+  const [search, setSearch] = useState('')
+  const [totalSkills, setTotalSkills] = useState(0)
+
+  const pageSize = 10
 
   useEffect(() => {
     const fetchSkills = async () => {
       try {
-        const res = await fetch('/api/skills')
+        const res = await fetch(
+          `/api/skills?limit=${pageSize}&skip=${
+            (page - 1) * pageSize
+          }&page=${page}&search=${search}`
+        )
 
         if (res.status === 200) {
           const data = await res.json()
           setSkills(data.skills)
+          setTotalSkills(data.total)
         }
       } catch (error) {
         console.error('error', error)
@@ -31,7 +44,15 @@ const UserSkillsPage = () => {
     }
 
     fetchSkills()
-  }, [])
+  }, [page, search])
+
+  const handleSearchQuery = (searchQuery) => {
+    setSearch(searchQuery)
+  }
+
+  const handlePageQuery = (page) => {
+    setPage(page)
+  }
 
   const handleDeleteSkill = async (id) => {
     const confirmed = window.confirm(
@@ -73,6 +94,9 @@ const UserSkillsPage = () => {
 
       {!loading && skills.length > 0 && (
         <div className='text-gray-200 italic tracking-wider font-thin overflow-hidden'>
+          <div className='w-full flex justify-start items-center gap-4'>
+            <SkillSearchForm sendSearchQuery={handleSearchQuery} />
+          </div>
           <table className='table w-full overflow-scroll'>
             <thead className='border-b border-mint text-center tracking-wider'>
               <tr>
@@ -134,6 +158,12 @@ const UserSkillsPage = () => {
               ))}
             </tbody>
           </table>
+          <Pagination
+            page={page}
+            pageSize={pageSize}
+            totalItems={totalSkills}
+            sendPageQuery={handlePageQuery}
+          />
         </div>
       )}
     </section>

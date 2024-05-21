@@ -3,11 +3,27 @@ import Skill from '@/models/Skill'
 
 export const dynamic = 'force-dynamic'
 
-export const GET = async () => {
+export const GET = async (request) => {
   try {
     await connectDB()
 
-    const skills = await Skill.find({}).lean()
+    // Get the page and limit query parameters
+    const { searchParams } = new URL(request.url)
+    const page = searchParams.get('page') || 1
+    const limit = searchParams.get('limit') || 10
+    const skip = (page - 1) * limit
+    const search = searchParams.get('search') || ''
+    const orderBy = searchParams.get('orderBy') || 'desc'
+    const sortBy = searchParams.get('sortBy') || 'name'
+
+    const skills = await Skill.find({})
+      .skip(skip)
+      .limit(limit)
+      .where('name')
+      .regex(new RegExp(search, 'i'))
+      .sort({ [sortBy]: orderBy })
+      .lean()
+
     const total = await Skill.countDocuments({})
 
     const results = {
