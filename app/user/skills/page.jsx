@@ -57,7 +57,6 @@ const UserSkillsPage = () => {
 
   const handleTypeQuery = (type) => {
     setType(type)
-    console.log(type)
   }
 
   const handleDeleteSkill = async (id) => {

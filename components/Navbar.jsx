@@ -3,6 +3,9 @@ import { signIn, signOut, useSession, getProviders } from 'next-auth/react'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
+
+import NotRespondedMessageCount from '@/components/NotRespondedMessageCount'
+
 import { FaGoogle, FaUserCircle } from 'react-icons/fa'
 
 const Navbar = () => {
@@ -110,6 +113,7 @@ const Navbar = () => {
                     <span className='absolute -inset-1.5'></span>
                     <span className='sr-only'>Open user menu</span>
                     <FaUserCircle className='h-8 w-8 text-gray-400' />
+                    <NotRespondedMessageCount session={session} />
                   </button>
                 </div>
 

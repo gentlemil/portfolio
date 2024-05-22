@@ -29,7 +29,7 @@ async function answeredMessage(messageId, is_answered) {
   await Message.findByIdAndUpdate(messageId, messageData)
 
   // revalidate the cache
-  revalidatePath('/user', 'layout')
+  revalidatePath('/user/messages', 'page')
 
   redirect(`/user/messages`)
 }

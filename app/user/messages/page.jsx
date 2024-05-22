@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import deleteMessage from '@/app/actions/deleteMessage'
 import answeredMessage from '@/app/actions/answeredMessage'
+import { useGlobalContext } from '@/context/GlobalContext'
 
 import Spinner from '@/components/Spinner'
 import { toast } from 'react-toastify'
@@ -16,6 +17,8 @@ const UserMessagesPage = () => {
   const router = useRouter()
   const [messages, setMessages] = useState([])
   const [loading, setLoading] = useState(true)
+
+  const { setNotRespondedCount } = useGlobalContext()
 
   useEffect(() => {
     const fetchMessages = async () => {
@@ -46,11 +49,14 @@ const UserMessagesPage = () => {
     setLoading(true)
     const answeredMessageId = answeredMessage.bind(null, id, is_read)
     await answeredMessageId()
-
+    await setNotRespondedCount((prevCount) =>
+      is_read ? prevCount + 1 : prevCount - 1
+    )
     toast.success('Success!')
 
     setLoading(false)
   }
+
   const handleDeleteMessage = async (id) => {
     const confirmed = window.confirm(
       'Are you sure you want to delete this message?'

@@ -7,6 +7,7 @@ import Footer from '@/components/Footer'
 
 import '@/assets/styles/globals.css'
 import 'react-toastify/dist/ReactToastify.css'
+import { GlobalProvider } from '@/context/GlobalContext'
 
 const ubuntu = Ubuntu({
   weight: ['300', '400', '500', '700'],
@@ -21,15 +22,17 @@ export const metadata = {
 const MainLayout = ({ children }) => {
   return (
     <AuthProvider>
-      <html lang='en'>
-        <body className={ubuntu.className}>
-          <Hero />
-          <Navbar />
-          <main className='text-gray-200'>{children}</main>
-          <Footer />
-          <ToastContainer />
-        </body>
-      </html>
+      <GlobalProvider>
+        <html lang='en'>
+          <body className={ubuntu.className}>
+            <Hero />
+            <Navbar />
+            <main className='text-gray-200'>{children}</main>
+            <Footer />
+            <ToastContainer />
+          </body>
+        </html>
+      </GlobalProvider>
     </AuthProvider>
   )
 }

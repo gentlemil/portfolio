@@ -1,12 +1,12 @@
 import AuthProvider from '@/components/authProvider'
+import Sidebar from '@/components/Sidebar'
 
 import '@/assets/styles/globals.css'
 import 'react-toastify/dist/ReactToastify.css'
-import Sidebar from '@/components/Sidebar'
 
 export const metadata = {
   title: 'miloszbukaladotpl',
-  description: 'User dashboard.',
+  description: `Let's make something special together!`,
 }
 
 const MainLayout = ({ children }) => {
